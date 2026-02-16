@@ -1,0 +1,78 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+// 31. Melós
+void dolgozom() { cout << "Dolgozom fonok!" << endl; }
+
+// 32. Duplázó
+int dupla(int n) { return n * 2; }
+
+// 33. Csere (Referenciával!)
+void csere(int& a, int& b) {
+    int temp = a; a = b; b = temp;
+}
+
+// 34. Tömb átadása
+// int* arr ugyanaz itt, mint int arr[]
+void tombKiir(int* arr, int meret) {
+    for(int i=0; i<meret; i++) cout << arr[i] << " ";
+    cout << endl;
+}
+
+// 35. Legnagyobb keresés
+int maximum(int* arr, int meret) {
+    int max = arr[0];
+    for(int i=1; i<meret; i++) if(arr[i] > max) max = arr[i];
+    return max;
+}
+
+// 36. Tömb töltő (Pointerrel írunk bele)
+void tolt(int* arr, int meret) {
+    for(int i=0; i<meret; i++) arr[i] = rand() % 100;
+}
+
+// 37. Pointeres átlag
+double atlag(int* arr, int meret) {
+    int sum = 0;
+    // Itt nem indexelunk, hanem toljuk a pointert
+    for(int i=0; i<meret; i++) {
+        sum += *arr; // Hozzáadjuk, amire mutat
+        arr++;       // Odébb toljuk a pointert
+    }
+    return (double)sum / meret;
+}
+
+// 38. Kereső (Pointert ad vissza!)
+int* keres(int* arr, int meret, int mit) {
+    for(int i=0; i<meret; i++) {
+        if(arr[i] == mit) return &arr[i]; // Visszaadjuk a CÍMÉT
+    }
+    return nullptr; // Ha nincs meg
+}
+
+// 39. Fordító
+void fordit(int* arr, int meret) {
+    for(int i=0; i<meret/2; i++) {
+        csere(arr[i], arr[meret-1-i]); // 33-as feladatot újrahasznosítjuk
+    }
+}
+
+// 40. Konstans védelem
+void csakOlvas(const int* arr, int meret) {
+    // arr[0] = 5; // Ez HIBA lenne, pirossal húzná alá
+    cout << "Csak olvasom: " << arr[0] << endl;
+}
+
+int main() {
+    srand(time(0)); // Random inicializálás
+    int t[5];
+    dolgozom();
+    tolt(t, 5); // 36
+    tombKiir(t, 5); // 34
+    cout << "Max: " << maximum(t, 5) << endl; // 35
+    fordit(t, 5); // 39
+    tombKiir(t, 5);
+    return 0;
+}
