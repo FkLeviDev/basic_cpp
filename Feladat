@@ -1,0 +1,249 @@
+1. Szint: A Kályha (Kezdjük az elején)
+Cél: Tudj írni a képernyőre, és tudd, mik azok a dobozok (változók).
+
+Beköszönés: Írd ki a fekete képernyőre: "Csá haver!".
+
+Visszhang: Kérj be egy számot, és írd ki ugyanazt a számot.
+
+Matek 1.0: Kérj be két számot, add össze őket, és írd ki az eredményt.
+
+A nagy átverés (float): Oszd el az 5-öt 2-vel úgy, hogy 2.5 legyen (ne 2). Tipp: használd a double típust.
+
+Betű-szám: Kérj be egy betűt, és írasd ki a számkódját (ezt hívják ASCII kódnak).
+
+Mekkora a zsebed?: Írasd ki sizeof-fal, hány bájtot foglal egy int (egész szám) és egy double (tört szám).
+
+Igaz vagy Hamis: Kérj be két számot. Ha az első nagyobb, írd ki: 1 (igaz), ha nem: 0 (hamis).
+
+Pithagorasz: Kérd be a háromszög két oldalát, számold ki az átlót (sqrt a gyökvonás).
+
+Kör: Kérd be a sugarat, számold ki a területet (Pi legyen 3.14).
+
+Trükkös csere: Van két poharad (A és B változó). Cseréld meg a tartalmukat úgy, hogy használsz egy harmadik üres poharat (C).
+
+2. Szint: Ha, Akkor, De (Döntések és Körhinták)
+Cél: A gép gondolkodjon helyetted.
+
+Páros-e?: Kérj be egy számot. Ha osztható 2-vel (maradék 0), írd ki: "Páros".
+
+Jegyosztó: Kérj be egy pontszámot. Ha 50 alatt van: "Egyes", ha felette: "Király vagy".
+
+Favágó módszer (Ciklus): Írasd ki a nevedet 10-szer egymás alá (for ciklus).
+
+Visszaszámlálás: Írd ki a számokat 10-től 0-ig, a végén: "Kilövés!".
+
+Meddig?: Kérj be egy számot (N). Írd ki a számokat 1-től N-ig.
+
+Csak a párosak: Írd ki a számokat 1-től 20-ig, de csak a párosakat!
+
+Összegző: Add össze a számokat 1-től 100-ig fejben... helyett ciklussal!
+
+Szorzótábla: Írasd ki a 7-es szorzótáblát (1x7, 2x7...).
+
+Találd ki: A gép gondol egy számra (legyen fix 42). Kérj be tippeket addig, amíg el nem találja (while ciklus).
+
+Négyzetrajzoló: Rajzolj ki csillagokból (*) egy 5x5-ös négyzetet (ciklus a ciklusban).
+
+3. Szint: A Mutogatós Bácsi (Pointerek - Ez a lényeg!)
+Cél: Megérteni, hogy nem a házat adjuk oda, hanem a lakcímkártyát.
+
+Hol laksz?: Csinálj egy x változót. Írasd ki a "lakcímét" a memóriában (& jel).
+
+A Mutató: Csinálj egy mutatót (int* p), ami rámutat az x-re.
+
+Kémkedés: Írasd ki, ami a mutatónál van (*p). Ugye ugyanaz, mint az x?
+
+Távirányítás: Változtasd meg az x értékét a mutatón keresztül (*p = 10). Írasd ki x-et. Megváltozott? (Igen!).
+
+Nullázás: Csinálj egy mutatót, ami a semmire mutat (nullptr). Ez a biztonságos "üres" állapot.
+
+Balra el, jobbra el: Csinálj egy 3 elemű tömböt. Állíts rá egy mutatót az elejére. Növeld a mutatót eggyel (p++). Most a második elemre mutat?
+
+Távolság: Vonj ki egymásból két mutatót (egyik a tömb végére, másik az elejére mutat). Megkapod a távolságot elemekben.
+
+A veszélyes zóna: Próbálj meg olvasni a nullptr-ből. (A program összeomlik. Ezt jegyezd meg: SOHA ne csináld!).
+
+Void pointer: Ez a "joker" mutató. Bármire mutathat, de nem tudod kivenni belőle az értéket, amíg meg nem mondod, milyen típus (castolás).
+
+Mutató mutatója: (int**). Egy cetli, amire egy másik cetli helye van írva, ami a kincsesládához vezet. Csináld meg és írd ki az értéket két csillaggal (**pp).
+
+4. Szint: Tömbök (A lakótelep) és Melósok (Függvények)
+Cél: Kiszervezni a munkát másoknak.
+
+Függvény 1.0: Írj egy "melóst" (függvényt), aki csak annyit csinál, hogy kiírja: "Dolgozom főnök!".
+
+Duplázó: A melós kap egy számot, és visszaadja a kétszeresét (return).
+
+Csere-bere (Ref): Írj egy függvényt, ami két számot cserél meg. Használj referenciát (&), különben a melós csak a fénymásolatokat cseréli meg, nem az eredetit!
+
+Tömb átadása: Add oda a melósnak a tömböd lakcímét (pointerét) és a méretét. Írassa ki az elemeket.
+
+Legnagyobb: A melós keresse meg a legnagyobb számot a tömbben, és adja vissza.
+
+Tömb töltő: A melós töltsön fel egy tömböt véletlen számokkal. (Mivel a címet kapja, az eredeti tömböd változik!).
+
+Pointeres átlag: Számold ki egy tömb átlagát úgy, hogy nem indexet (i), hanem pointert tologatsz.
+
+Kereső: A melós adjon vissza egy mutatót arra a számra, amit keresünk. Ha nincs meg, adjon vissza nullptr-t.
+
+Fordító: A melós fordítsa meg a tömböt (első helyre az utolsót, stb.).
+
+Konstans védelem: Add át a tömböt úgy (const int*), hogy a melós csak olvashassa, de ne írhassa át!
+
+5. Szint: Kézi Vezérlés (Dinamikus Memória - New & Delete)
+Cél: A memória nem játék... vagyis de, de takarítani kell!
+
+Kérj helyet: Kérj a géptől helyet egyetlen számnak (new int). Írj bele valamit.
+
+Takaríts: Töröld ki a memóriából, amit az előbb kértél (delete). Ha nem teszed, "szemetelsz" (memory leak).
+
+Dinamikus tömb: Kérdezd meg a felhasználót, hány számot akar. Csak ezután kérj pont annyi helyet (new int[N]).
+
+Tömb törlése: Töröld a fenti tömböt (delete[] - a kockás zárójel kötelező!).
+
+Másoló: Csinálj egy függvényt, ami kap egy tömböt, kér új helyet, átmásolja az adatokat, és visszaadja az ÚJ tömb címét.
+
+Bővítés (A trükk): Volt egy 5 elemű tömböd, de 6. elem kell?
+
+Kérj helyet 6-nak.
+
+Másold át az 5-öt.
+
+Töröld a régit.
+
+Állítsd át a mutatót az újra.
+
+Páros szűrő: Kérj be számokat. Számold meg hány páros van. Csinálj egy PONT akkora tömböt dinamikusan, és másold át őket.
+
+Szöveg másoló: Kérj be egy nevet. Csinálj neki pont akkora helyet a memóriában, másold át betűnként.
+
+Örök ciklus (Vigyázz!): Csinálj egy ciklust, ami foglal, de nem töröl. Figyeld a Feladatkezelőt, hogy fogy a RAM. (Aztán lődd le a programot).
+
+Okos pointer (csak említés): Mondd el neki, hogy van olyan, ami takarít maga után (unique_ptr), de most szenvedjen a new/delete-tel, hogy megtanulja a rendet!
+
+6. Szint: Szövegelés (Stringek és Karakterek)
+Cél: Betűk kezelése.
+
+A régi módszer: Használj char tömböt szöveg tárolására. (Vigyázz, a végén kell egy 0-ás kódú karakter, ez jelzi a végét!).
+
+Hossz: Írj függvényt, ami megszámolja, hány betű van a szövegben (keresse meg a lezáró 0-t).
+
+Nagybetűs: Menj végig a szövegen, és minden kisbetűből vonj ki 32-t (így lesz nagybetű).
+
+Az új módszer: Most használd az std::string-et. Ugye mennyivel könnyebb?
+
+Összefűzés: Ragassz össze két szót (+ jel).
+
+Keresés: Keress meg egy betűt a szövegben.
+
+Darabolás: Vágd le a szöveg első 3 betűjét (substr).
+
+Számolós: Számold meg, hány szóköz van a mondatban.
+
+Szám a szövegben: Alakíts át egy szöveget ("123") számmá (stoi).
+
+Fordítva: Írd ki a neved visszafelé.
+
+7. Szint: Saját Cuccok (Struct - Struktúrák)
+Cél: Összetartozó adatok egy dobozban.
+
+Hős: Csinálj egy Hos típust: legyen Neve (string) és Életereje (int).
+
+Létrehozás: Csinálj egy konkrét hőst ("Conan", 100 HP).
+
+Dinamikus Hős: Csinálj egy Hőst a memóriában (new Hos).
+
+A Nyíl: Ha dinamikus a hős, így éred el az adatait: hos->eletero (nem ponttal, nyíllal!).
+
+Téglalap: Csinálj téglalap típust (szélesség, magasság).
+
+Terület: Írj függvényt, ami kap egy téglalapot, és megmondja a területét.
+
+Diák: Csinálj Diak típust. Legyen benne egy mutató (int* jegyek), ami a jegyeire mutat. Ez durva lesz!
+
+Diák születése: Írj függvényt, ami létrehoz egy diákot, ÉS lefoglalja a jegyeinek is a tömböt.
+
+Diák halála: Írj függvényt, ami előbb törli a jegyek tömbjét, aztán a diákot. (Fontos a sorrend!).
+
+Osztály: Csinálj egy tömböt, amiben Hősök vannak.
+
+8. Szint: A Mátrix (2D tömbök és mutatók mutatói)
+Cél: A legnagyobb szívás, de ha ez megy, minden megy.
+
+A Fix Mátrix: Csinálj egy 3x3-as táblázatot (mint az amőba). Töltsd fel nullákkal.
+
+A Dinamikus Mátrix (Boss Fight):
+
+Kell egy tömb, ami mutatókat tárol (int**).
+
+Minden mutatóhoz foglalj le egy-egy sort (new int[]).
+
+Feltöltés: Írj a mátrixba két ciklussal (sor, oszlop).
+
+Kiíratás: Írasd ki szépen táblázatosan.
+
+Törlés (Nagyon fontos):
+
+Előbb töröld a sorokat egyesével (ciklusban).
+
+Aztán töröld a mutatók tömbjét (a gerincet).
+
+Szorzótábla: Töltsd fel a mátrixot a szorzótáblával.
+
+Egységmátrix: Csinálj olyat, hogy csak az átlóban legyenek 1-esek, máshol 0.
+
+Transzponálás: Cseréld fel a sorokat és oszlopokat.
+
+Fűrészfog: Csinálj olyan mátrixot, ahol az első sor 1 elemű, a második 2, a harmadik 3... (Pascal háromszög).
+
+Aknamező: Szórj el véletlenszerűen -1-eseket a mátrixban.
+
+9. Szint: Írd fel, hogy megmaradjon (Fájlkezelés)
+Cél: Ha kikapcsolod a gépet, ne vesszen el minden.
+
+Írás: Nyiss meg egy szöveges fájlt, és írd bele: "Itt jártam".
+
+Olvasás: Olvasd vissza, amit írtál, és dobd a képernyőre.
+
+Mátrix mentése: A 76-os szorzótáblát mentsd el egy fájlba.
+
+Mátrix visszatöltése: Olvasd be a fájlból a számokat egy új mátrixba.
+
+Hozzáírás: Ne írd felül a fájlt, hanem írj hozzá egy új sort (append).
+
+Sorok száma: Olvass végig egy fájlt, és számold meg, hány sor van benne.
+
+Napló: Írj egy függvényt, ami bármit kap szöveget, beleírja egy log.txt-be időbélyeggel.
+
+CSV (Excel): Írj be adatokat pontosvesszővel elválasztva (Név;Kor;Jegy), és tudd visszaolvasni.
+
+Beállítások: Legyen egy config.txt (pl: "felbontas=1024"), olvasd be és állítsd be a változót.
+
+Biztonság: Ellenőrizd mindig, hogy sikerült-e megnyitni a fájlt. Ha nem, sikíts (hibaüzenet).
+
+10. Szint: Vizsgamunkák (A Nagy Buli)
+Cél: Rakd össze, amit tudsz.
+
+Láncolt lista (Eleje): Csinálj egy dobozt (Node), amiben van egy szám, és egy mutató a következő dobozra.
+
+Láncolás: Fűzz össze 3 ilyen dobozt a memóriában.
+
+Amőba: Írj egy kétjátékos amőbát (3x3), ami jelzi, ki nyert.
+
+Labirintus: Generálj egy pályát falakkal, mentsd fájlba.
+
+Bank: Ügyfelek (Struct), pénzmozgás, egyenleg, mentés fájlba.
+
+Szótár: Angol-Magyar szótár. Beírod angolul, kiírja magyarul. Fájlból tölti be.
+
+Képmanipulátor: Egy számokból álló mátrix valójában egy kép. Növeld meg minden szám értékét (világosítás).
+
+Webshop kosár: Termékek listája, árösszegzés, tétel törlése.
+
+Titkosítás: Told el a betűket az ABC-ben 1-gyel. "Alma" -> "Bmnb".
+
+RPG Karakterlap (A Végső Boss):
+* Karakter neve, élete.
+* Tárgylista (dinamikus tömb, ami nőhet!).
+* Mentés fájlba / Betöltés fájlból.
+* Ha kilépsz, takarítson ki mindent a memóriából (0 leak!).
