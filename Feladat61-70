@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+// 61. Hős Struct
+struct Hos {
+    string nev;
+    int hp;
+};
+
+// 65. Téglalap
+struct Teglalap {
+    int w, h;
+};
+
+// 67. Diák (bonyolult!)
+struct Diak {
+    string nev;
+    int* jegyek; // Pointer tömbre!
+    int jegyDb;
+};
+
+// 68. Diák születése (Konstruktor helyett)
+Diak letrehoz(string n, int db) {
+    Diak d;
+    d.nev = n;
+    d.jegyDb = db;
+    d.jegyek = new int[db]; // Itt foglalunk!
+    return d;
+}
+
+// 69. Diák halála (Destruktor helyett)
+void torol(Diak& d) {
+    delete[] d.jegyek; // Előbb a belsőt!
+    d.jegyek = nullptr;
+}
+
+int main() {
+    // 62. Létrehozás
+    Hos h1; 
+    h1.nev = "Conan"; h1.hp = 100;
+
+    // 63. Dinamikus Hős
+    Hos* hPtr = new Hos;
+    
+    // 64. Nyíl operátor
+    hPtr->nev = "Xena"; // Ugyanaz mint (*hPtr).nev
+    hPtr->hp = 120;
+    delete hPtr;
+
+    // 66. Terület
+    Teglalap t = {10, 20};
+    cout << "Terulet: " << t.w * t.h << endl;
+
+    // Diák teszt
+    Diak peti = letrehoz("Peti", 3);
+    peti.jegyek[0] = 5;
+    peti.jegyek[1] = 4;
+    peti.jegyek[2] = 5;
+    
+    cout << peti.nev << " elso jegye: " << peti.jegyek[0] << endl;
+    
+    torol(peti); // Ha ezt elfelejted -> Memory Leak!
+
+    return 0;
+}
