@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream> // Fájlkezeléshez
+#include <string>
+using namespace std;
+
+int main() {
+    // 81. Írás
+    ofstream ki("adat.txt");
+    if(ki.is_open()) {
+        ki << "Itt jartam" << endl;
+        ki << "Masodik sor" << endl;
+        ki.close(); // Fontos bezárni!
+    }
+
+    // 82. Olvasás
+    ifstream be("adat.txt");
+    string sor;
+    if(be.is_open()) {
+        while(getline(be, sor)) { // Soronként olvasunk
+            cout << "Fajlbol: " << sor << endl;
+        }
+        be.close();
+    }
+
+    // 85. Hozzáírás (Append)
+    ofstream hozza("adat.txt", ios::app); // ios::app a kulcs
+    hozza << "Ez egy uj sor a vegen." << endl;
+    hozza.close();
+
+    // 89. Config olvasás (felbontas=1024)
+    // Tegyük fel, hogy van egy config.txt
+    // string kulcs, ertek;
+    // getline(be, kulcs, '='); // Olvasás az = jelig
+    // getline(be, ertek);      // Olvasás a sor végéig
+
+    return 0;
+}
