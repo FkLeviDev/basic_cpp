@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // 21. Hol laksz?
+    int x = 55;
+    cout << "21. x cime: " << &x << endl;
+
+    // 22. A Mutató
+    int* p = &x; // p most az x címét tárolja
+    cout << "22. p erteke (cim): " << p << " p altal mutatott adat (*p): " << *p << endl;
+
+    // 23. Kémkedés
+    // Ugyanaz mint a 22, *p az adatot adja vissza.
+
+    // 24. Távirányítás
+    *p = 999; // Átírjuk, amire a p mutat (tehát x-et)
+    cout << "24. x uj erteke: " << x << endl;
+
+    // 25. Nullázás
+    int* p_null = nullptr;
+    cout << "25. Ez biztonsagos null pointer." << endl;
+
+    // 26. Balra el, jobbra el
+    int tomb[3] = {10, 20, 30};
+    int* p_tomb = tomb; // Tömb neve alapból pointer az első elemre
+    cout << "26. Elso elem: " << *p_tomb << endl;
+    p_tomb++; // Ugorjunk egy int-nyit a memóriában
+    cout << "Masodik elem: " << *p_tomb << endl;
+
+    // 27. Távolság
+    int* eleje = &tomb[0];
+    int* vege = &tomb[2];
+    cout << "27. Tavolsag: " << vege - eleje << " elem." << endl;
+
+    // 28. Veszélyes zóna
+    if (p_null != nullptr) {
+        cout << *p_null; // SOHA ne csináld ellenőrzés nélkül!
+    } else {
+        cout << "28. Huh, megusztuk a fagyast." << endl;
+    }
+
+    // 29. Void pointer
+    void* mindenes = &x;
+    // cout << *mindenes; // HIBA! Nem tudja mit olvasson.
+    cout << "29. Voidbol int: " << *(int*)mindenes << endl; // Castolás után jó.
+
+    // 30. Mutató mutatója
+    int** pp = &p;
+    cout << "30. Mutato mutatoja alapjan az adat: " << **pp << endl;
+
+    return 0;
+}
