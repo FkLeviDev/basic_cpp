@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath> // Matekhoz
+#include <iomanip> // Formázáshoz
+
+using namespace std;
+
+int main() {
+    // 1. Beköszönés
+    cout << "1. Feladat: Csa haver!" << endl;
+
+    // 2. Visszhang
+    int szam;
+    cout << "2. Feladat: Irj be egy szamot: ";
+    cin >> szam;
+    cout << "Ezt irtad: " << szam << endl;
+
+    // 3. Matek 1.0
+    int a, b;
+    cout << "3. Feladat: Adj meg ket szamot (a b): ";
+    cin >> a >> b;
+    cout << "Osszeg: " << a + b << endl;
+
+    // 4. A nagy átverés (float)
+    // Ha siman 5/2-t irsz, az 2 lesz. Ha 5.0/2-t, vagy (double)5/2-t, az 2.5.
+    cout << "4. Feladat: 5 / 2 = " << (double)5 / 2 << endl;
+
+    // 5. Betű-szám (ASCII)
+    char k;
+    cout << "5. Feladat: Adj egy betut: ";
+    cin >> k;
+    cout << "Kodja: " << (int)k << endl;
+
+    // 6. Mekkora a zsebed?
+    cout << "6. Feladat: Int merete: " << sizeof(int) << " byte" << endl;
+    cout << "Double merete: " << sizeof(double) << " byte" << endl;
+
+    // 7. Igaz vagy Hamis
+    // 1 = igaz, 0 = hamis
+    cout << "7. Feladat: Az elso nagyobb? " << (a > b) << endl;
+
+    // 8. Pithagorasz (a=3, b=4 -> c=5)
+    double bef1, bef2;
+    cout << "8. Feladat: Befogok: ";
+    cin >> bef1 >> bef2;
+    double atfogo = sqrt(pow(bef1, 2) + pow(bef2, 2));
+    cout << "Atfogo: " << atfogo << endl;
+
+    // 9. Kör
+    const double PI = 3.14159;
+    double r;
+    cout << "9. Feladat: Sugar: ";
+    cin >> r;
+    cout << fixed << setprecision(2); // 2 tizedesjegy
+    cout << "Terulet: " << r * r * PI << endl;
+
+    // 10. Trükkös csere
+    int x = 10, y = 20, temp;
+    temp = x;
+    x = y;
+    y = temp;
+    cout << "10. Feladat: Csere utan x: " << x << " y: " << y << endl;
+
+    return 0;
+}
