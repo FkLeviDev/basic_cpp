@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+#include <cstring> // C stringhez
+using namespace std;
+
+int main() {
+    // 51. Régi módszer (C string)
+    char nev[50];
+    cout << "Nev: "; 
+    cin >> nev; // Veszélyes, de most tanulunk
+
+    // 52. Hossz kézzel
+    int hossz = 0;
+    while(nev[hossz] != '\0') { // \0 a lezáró karakter
+        hossz++;
+    }
+    cout << "Hossz: " << hossz << endl;
+
+    // 53. Nagybetűsítés (ASCII matek)
+    // 'a' = 97, 'A' = 65. Különbség 32.
+    if(nev[0] >= 'a' && nev[0] <= 'z') {
+        nev[0] -= 32;
+    }
+    cout << "Nagybetusen: " << nev << endl;
+
+    // 54. Az új módszer (std::string)
+    string s = "Ez sokkal jobb";
+    
+    // 55. Összefűzés
+    string s2 = s + ", haver!";
+    cout << s2 << endl;
+
+    // 56. Keresés
+    if(s2.find("jobb") != string::npos) {
+        cout << "Megvan a szo!" << endl;
+    }
+
+    // 57. Darabolás
+    string darab = s2.substr(0, 5); // 0. indextől 5 betű
+    cout << darab << endl;
+
+    // 58. Számolós
+    int szokoz = 0;
+    for(char c : s2) {
+        if(c == ' ') szokoz++;
+    }
+    cout << "Szokozok: " << szokoz << endl;
+
+    // 59. Szám a szövegben
+    string szamSzoveg = "123";
+    int szam = stoi(szamSzoveg);
+    cout << "Szamkent + 1: " << szam + 1 << endl;
+
+    // 60. Fordítva
+    string vissza = "Attila";
+    for(int i = vissza.length()-1; i >= 0; i--) {
+        cout << vissza[i];
+    }
+    cout << endl;
+
+    return 0;
+}
