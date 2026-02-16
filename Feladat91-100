@@ -1,0 +1,79 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector> // Itt már csalhatunk kicsit a kényelemért, de maradjunk dinamikusnál
+using namespace std;
+
+// 91. Node (Láncolt lista elem)
+struct Node {
+    int adat;
+    Node* kovetkezo;
+};
+
+// RPG Karakterlap (100. feladat egyszerűsítve)
+struct Karakter {
+    string nev;
+    int hp;
+    string* targyak; // Dinamikus tömb
+    int targyDb;
+};
+
+void targyFelvesz(Karakter& k, string mit) {
+    // 1. Új tömb foglalása ( eggyel nagyobb)
+    string* ujTomb = new string[k.targyDb + 1];
+    
+    // 2. Másolás
+    for(int i=0; i<k.targyDb; i++) {
+        ujTomb[i] = k.targyak[i];
+    }
+    
+    // 3. Új elem hozzáadása
+    ujTomb[k.targyDb] = mit;
+    
+    // 4. Régi törlése, pointer csere
+    delete[] k.targyak;
+    k.targyak = ujTomb;
+    k.targyDb++;
+    
+    cout << mit << " felvive." << endl;
+}
+
+void karakterTorol(Karakter& k) {
+    delete[] k.targyak;
+    k.targyak = nullptr;
+    k.targyDb = 0;
+}
+
+int main() {
+    // 92. Láncolás
+    Node* n1 = new Node{1, nullptr};
+    Node* n2 = new Node{2, nullptr};
+    n1->kovetkezo = n2;
+    cout << "Lancolt 2. eleme: " << n1->kovetkezo->adat << endl;
+    delete n2; delete n1; // Takarítás
+
+    // 100. RPG Teszt
+    Karakter hos;
+    hos.nev = "Geralt";
+    hos.hp = 100;
+    hos.targyDb = 0;
+    hos.targyak = nullptr; // Kezdetben üres
+
+    targyFelvesz(hos, "Kard");
+    targyFelvesz(hos, "Pancel");
+    targyFelvesz(hos, "Potifozet");
+
+    cout << hos.nev << " targyaru:" << endl;
+    for(int i=0; i<hos.targyDb; i++) {
+        cout << "- " << hos.targyak[i] << endl;
+    }
+
+    // Fájlba mentés
+    ofstream ment("savegame.txt");
+    ment << hos.nev << endl << hos.hp << endl << hos.targyDb << endl;
+    for(int i=0; i<hos.targyDb; i++) ment << hos.targyak[i] << endl;
+    ment.close();
+
+    karakterTorol(hos); // Memória felszabadítása
+    return 0;
+}
