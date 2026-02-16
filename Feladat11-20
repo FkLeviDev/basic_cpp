@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    // 11. Páros-e
+    cout << "Szam: "; cin >> n;
+    if (n % 2 == 0) cout << "Paros" << endl;
+    else cout << "Paratlan" << endl;
+
+    // 12. Jegyosztó
+    int pont;
+    cout << "Pontszam: "; cin >> pont;
+    if (pont < 50) cout << "Karhozat (1)" << endl;
+    else cout << "Kiralysag (5)" << endl;
+
+    // 13. Favágó (For ciklus)
+    for(int i = 0; i < 10; i++) cout << "Nevem" << endl;
+
+    // 14. Visszaszámlálás
+    for(int i = 10; i >= 0; i--) cout << i << " ";
+    cout << "Kiloves!" << endl;
+
+    // 15. Meddig?
+    cout << "Meddig szamoljak? "; cin >> n;
+    for(int i = 1; i <= n; i++) cout << i << " ";
+    cout << endl;
+
+    // 16. Csak párosak
+    for(int i = 1; i <= 20; i++) {
+        if(i % 2 == 0) cout << i << " ";
+    }
+    cout << endl;
+
+    // 17. Összegző
+    int sum = 0;
+    for(int i = 1; i <= 100; i++) sum += i;
+    cout << "Osszeg 1-100: " << sum << endl;
+
+    // 18. Szorzótábla
+    cout << "7-es tabla:" << endl;
+    for(int i = 1; i <= 10; i++) cout << i << "*7 = " << i*7 << endl;
+
+    // 19. Találd ki (While)
+    int tipp = 0, gondolt = 42;
+    while(tipp != gondolt) {
+        cout << "Tippelj: "; cin >> tipp;
+    }
+    cout << "Talalt!" << endl;
+
+    // 20. Négyzetrajzoló
+    cout << "5x5 negyzet:" << endl;
+    for(int i=0; i<5; i++) {       // Sorok
+        for(int j=0; j<5; j++) {   // Oszlopok
+            cout << "*";
+        }
+        cout << endl; // Sor vegén entert ütünk
+    }
+
+    return 0;
+}
