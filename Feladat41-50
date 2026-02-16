@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // 41. Kérj helyet egynek
+    int* p = new int; 
+    *p = 100;
+    cout << "41. Heapen levo adat: " << *p << endl;
+
+    // 42. Takaríts (Egyet)
+    delete p; 
+    p = nullptr; // Biztonság
+
+    // 43. Dinamikus tömb
+    int n;
+    cout << "Hany szam kell? "; cin >> n;
+    int* tomb = new int[n]; // Fontos a []
+
+    // 44. Tömb használata és törlése
+    for(int i=0; i<n; i++) tomb[i] = i;
+    delete[] tomb; // Fontos a [] a delete után is!
+
+    // 45. Másoló (Demo)
+    // Tegyük fel van egy 'forras' tömbünk
+    int meret = 3;
+    int* forras = new int[meret]{1, 2, 3};
+    
+    int* cel = new int[meret]; // Uj hely kérése
+    for(int i=0; i<meret; i++) cel[i] = forras[i]; // Adatok másolása
+    
+    // 46. Bővítés (Resize)
+    int* nagyobb = new int[meret * 2]; // 1. Nagyobb hely
+    for(int i=0; i<meret; i++) nagyobb[i] = cel[i]; // 2. Másolás
+    delete[] cel; // 3. Régi törlése
+    cel = nagyobb; // 4. Pointer átirányítása
+    // Most 'cel' már a nagyobbra mutat!
+
+    // Takarítás a végén
+    delete[] forras;
+    delete[] cel;
+
+    // 49. Örök ciklus (NE FUTTASD SOKÁIG)
+    /*
+    while(true) {
+        int* baj = new int[100000];
+        // Nincs delete -> Memory Leak
+    }
+    */
+    
+    return 0;
+}
